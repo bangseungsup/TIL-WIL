@@ -41,7 +41,7 @@ Access-Control-Allow-Origin http://localhost:3000
 3. 클라이언트에서 자신이 보냈던 요청의 Origin과 서버가 보내준 Access-Control-Allow-Origin 비교
  - 이후 응답을 받은 브라우저는 자신이 보냈던 요청의 Origin과 서버가 보내준 응답의 Access-Control-Allow-Origin 비교한 후 차단 여부 결정
  - 만약 유효하지 않다면 그 응답을 사용하지 않고 버린다 (CORS 에러)
- - 위의 경우, http://localhost:3000 동일하니 다른 출처의 리소스 문제 없이 가져오게 
+ - 위의 경우, http://localhost:3000 동일하니 다른 출처의 리소스 문제 없이 가져오게 됨
 
 
 
@@ -50,4 +50,4 @@ Access-Control-Allow-Origin http://localhost:3000
 
 ### SOP
 SOP, Same-Origin Policy
-같은 출처에서만 리소스를 공유할 수 
+같은 출처에서만 리소스를 공유할 수 있게 하는 것
