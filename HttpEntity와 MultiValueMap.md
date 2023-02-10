@@ -1,4 +1,5 @@
-Social Login
+Social Login 쪽 코드를 공부하다가 궁금한 점이 생겼다.
+HttpEntity와 MultiValueMap 이라는 존재였다.
 
 ```
  HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest =
