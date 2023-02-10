@@ -14,7 +14,7 @@ HttpEntity와 MultiValueMap 이라는 존재였다.
 ```
 
 ##### HttpEntity / ResponseEntity
-  - HttpEntity와 함께 얘기할 수 있는 것이 ResponseEntity 이다.
+  - HttpEntity와 함께 얘기할 수 있는 것이 ResponseEntity
 
 ###### HttpEntity
 공식 문서를 보면
