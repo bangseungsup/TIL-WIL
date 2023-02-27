@@ -77,6 +77,11 @@ UDP는 TCP와는 달리 비연결형 프로토콜입니다. 연결을 위해 할
 ### TCP와 UDP 비교
 ![image](https://user-images.githubusercontent.com/118147296/220518823-48f9b796-396c-488d-ba39-37fe338b0616.png)
 
+TCP는 연속성보다 신뢰성 있는 전송이 중요할 때에 사용되는 프로토콜이며,
+UDP는 TCP보다 빠르고 네트워크 부하가 적다는 장점이 있지만 신뢰성 있는 데이터 전송을 보장하지는 않습니다.
+그렇기 때문에 신뢰성보다는 연속성이 중요한 실시간 스트리밍과 같은 서비스에 자주 사용됩니다.
+
+![image](https://user-images.githubusercontent.com/118147296/221514451-2f417dfd-64f1-4100-858e-6e2367370227.png)
 
 
 출처. https://mangkyu.tistory.com/15
