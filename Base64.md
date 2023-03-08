@@ -27,3 +27,89 @@ Base64 Encoding을 하게되면 전송해야 될 데이터의 양도 약 33% 정
 위와 같은 문제로 ASCII는 시스템간 데이터를 전달하기에 안전하지가 않다. Base64는 ASCII 중 제어문자와 일부 특수문자를 제외한 64개의 안전한 출력 문자만 사용한다.
 
 **Base64는 HTML 또는 Email과 같이 문자를 위한 Media에 Binary Data를 포함해야 될 필요가 있을 때, 포함된 Binary Data가 시스템 독립적으로 동일하게 전송 또는 저장되는걸 보장하기 위해 사용한다.**
+
+
+
+### JAVA Base64 Encode/Decode 3가지 방법
+1. 자바8 기본 라이브러리
+```
+import java.util.Base64;
+import java.util.Base64.Encoder;
+import java.util.Base64.Decoder;
+
+public class Base64ClassImportUtil {
+
+	public static void main(String[] args) {
+
+		String testText = "Base64 Encode Decode Test";	
+		byte[] testToByte = testText.getBytes();
+		
+		//자바 8 기본 Base64 Encoder Decoder
+		Encoder encode = Base64.getEncoder();
+		Decoder decode = Base64.getDecoder();
+		
+		//Base64 인코딩
+		byte[] encodeByte = encode.encode(testToByte);
+		
+		//Base64 디코딩
+		byte[] decodeByte = decode.decode(encodeByte);
+		
+		System.out.println("인코딩 전: "+ testText);
+		System.out.println("인코딩: "+ new String(encodeByte));
+		System.out.println("디코딩: "+ new String(decodeByte));	
+		
+	}
+
+}
+```
+
+2. Apache Commons 라이브러리
+다음 방식을 이용해 Base64 인코딩을 하려면 위의 링크에서 jar파일을 다운받거나 Maven을 이용해서 프로젝트에 추가해야 합니다.
+```
+import org.apache.commons.codec.binary.Base64;
+
+public class Base64ClassImportApache {
+
+	public static void main(String[] args) {
+		
+		String testText = "Base64 Encode Decode Test";
+		byte[] testToByte = testText.getBytes();
+
+		//Base64 인코딩
+		byte[] encodeByte = Base64.encodeBase64(testToByte);
+		
+		//Base64 디코딩
+		byte[] decodeByte = Base64.decodeBase64(encodeByte);
+		
+		System.out.println("인코딩 전: " + testText);
+		System.out.println("인코딩: " + new String(encodeByte)); 
+		System.out.println("디코딩: " + new String(decodeByte));
+		
+	}
+
+}
+```
+
+3. 자바 6 이상 기본 라이브러리
+java-1.8.0-openjdk-1.8.0.242 에서 작동되는 것을 확인 했습니다. 버전에 따라 실행이 안될 수도 있습니다.
+```
+import javax.xml.bind.DatatypeConverter;
+
+public class Base64ClassImportConverter {
+
+	public static void main(String[] args) {
+		
+		String testText = "Base64 Encode Decode Test";
+		byte[] testToByte = testText.getBytes();
+
+		String encodeByte = DatatypeConverter.printBase64Binary(testToByte);
+		byte[] decodeByte = DatatypeConverter.parseBase64Binary(encodeByte);
+		
+		System.out.println("인코딩 전: " + testText);
+		System.out.println("인코딩: " + encodeByte);
+		System.out.println("디코딩: " + new String(decodeByte));	
+		
+	}
+
+}
+```
