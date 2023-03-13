@@ -99,6 +99,5 @@ Juicer.<Apple>makeJuice(appleBox);  // 가능
 
 ![image](https://user-images.githubusercontent.com/118147296/224667771-b8853938-72b4-4ca4-8fea-e754f75a8d3a.png)
 
-(line 24) : 같은 클래스 내에 있는 멤버들끼리는 makeJuice 처럼 앞에 클래스이름(Juicer) 를 생략할 수 있지만,
-
-(line 28) : 클래스 외부에서는 반드시 클래스 이름을 써줘야 한다.
+- line 24 : 같은 클래스 내에 있는 멤버들끼리는 makeJuice 처럼 앞에 클래스이름(Juicer) 를 생략할 수 있지만,
+- line 28 : 클래스 외부에서는 반드시 클래스 이름을 써줘야 한다.
